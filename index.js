@@ -1,5 +1,4 @@
 function checkCashRegister(price, cash, cid) {
-	debugger;
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
