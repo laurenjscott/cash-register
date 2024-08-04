@@ -2,6 +2,7 @@ window.addEventListener("load", () => {
 	const btnCheckCashRegister = document.querySelector("form button.btn-check-cash-register");
 	btnCheckCashRegister.addEventListener("click", () => {
 		const inputCashValue = document.querySelector(".customer-cash").value;
+		console.info(inputCashValue);
 		const inputPriceValue = document.querySelector(".price").value;
 		const inputsCashInDrawerFieldset = document.querySelectorAll("fieldset input");
 		const arrayCashInDrawerInput = [];
@@ -11,6 +12,7 @@ window.addEventListener("load", () => {
 			denominationArray.push(input.value);
 			arrayCashInDrawerInput.push(denominationArray);
 		}
+		console.info(arrayCashInDrawerInput);
 		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
 });
