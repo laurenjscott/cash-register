@@ -3,13 +3,46 @@ window.addEventListener("load", () => {
 	btnCheckCashRegister.addEventListener("click", () => {
 		const inputCashValue = document.querySelector(".customer-cash").value;
 		const inputPriceValue = document.querySelector(".price").value;
-		const inputCashInDrawerValue = document.querySelector(".cash-in-drawer").value;
-		checkCashRegister(inputPriceValue, inputCashValue, inputCashInDrawerValue);
+		const inputsCashInDrawerFieldset = document.querySelectorAll("fieldset input");
+		const arrayCashInDrawerInput = [];
+		for(input of inputsCashInDrawerFieldset) {
+			let denominationArray = [];
+			denominationArray.push(input.id);
+			denominationArray.push(input.value);
+			arrayCashInDrawerInput.push(denominationArray);
+		}
+		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
 });
 
+function renderCashInDrawerInputs() {
+	const fieldset = document.querySelector("fieldset");
+	const currencyDictionary = [
+		["ONE HUNDRED", 100],
+		["TWENTY", 20],
+		["TEN", 10],
+		["FIVE", 5],
+		["ONE", 1],
+		["QUARTER", 0.25],
+		["DIME", 0.1],
+		["NICKEL", 0.05],
+		["PENNY", 0.01]
+	]; 
 
-function checkCashRegister(price, cash, cid) {
+	for(currency of currencyDictionary) {
+		let input = document.createElement("input");
+		let label = document.createElement("label");
+		input.type = "number";
+		input.id = currency[0];
+		label.textContent = currency[0];
+		label.setAttribute("for", input.id);
+		fieldset.appendChild(input);
+		fieldset.appendChild(label);
+	}
+}
+
+
+function checkCashRegister(price, cash, cid) { //cid is an array
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
