@@ -10,7 +10,7 @@ function checkCashRegister(price, cash, cid) {
 		["NICKEL", 0.05],
 		["PENNY", 0.01]
 	];
-	const cidReverse = cid.toReversed;
+	const cidReverse = cid.toReversed();
 	const totalInDrawer = cidReverse.reduce(
 		(totalInDrawer, currency) => totalInDrawer + currency[1],
 		0
