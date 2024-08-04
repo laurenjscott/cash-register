@@ -82,6 +82,7 @@ function checkCashRegister(price, cash, cid) {
 	}
 	const totalCurrencyGivenSum = totalChangeReturnedArray.reduce((sum, currency) => sum + currency[1], 0);
 	console.info(totalCurrencyGivenSum);
+	console.info("Hello World");
 	statusObj.status = "OPEN";
 	console.info(statusObj);
 	return statusObj;
