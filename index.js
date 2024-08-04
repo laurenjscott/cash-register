@@ -1,6 +1,5 @@
 function checkCashRegister(price, cash, cid) {
 	console.info("Hello World");
-
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
