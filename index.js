@@ -1,4 +1,6 @@
 function checkCashRegister(price, cash, cid) {
+	console.info("Hello World");
+
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
@@ -82,7 +84,6 @@ function checkCashRegister(price, cash, cid) {
 	}
 	const totalCurrencyGivenSum = totalChangeReturnedArray.reduce((sum, currency) => sum + currency[1], 0);
 	console.info(totalCurrencyGivenSum);
-	console.info("Hello World");
 	statusObj.status = "OPEN";
 	console.info(statusObj);
 	return statusObj;
