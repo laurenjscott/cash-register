@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <header>Cash Register</header>  
-    <h1>Cash Register</h1>
+    <header>
+        <h1>Cash Register</h1>
+    </header>  
+    
     <main>
         <form action="">
             <input type="number" name="customer-cash" id="customer-cash">;
@@ -15,7 +18,9 @@
             <input type="number" name="price" id="price">
             <label for="price">What is this item's price?</label>
             <input type="number" name="cash-in-drawer" id="cash-in-drawer">
-            <label for="cash-in-drawer">How much money is in the register?</label>
+            <fieldset>
+                <legend>How much money is in the register?</legend>
+            </fieldset>
             <button type="button" class="btn-check-cash-register">Give change!</button>
         </form>
         <p class="result-paragraph"></p>
