@@ -10,7 +10,7 @@ function checkCashRegister(price, cash, cid) {
 		["NICKEL", 0.05],
 		["PENNY", 0.01]
 	];
-	const cidReverse = cid.reverse();
+	const cidReverse = cid.toReversed;
 	const totalInDrawer = cidReverse.reduce(
 		(totalInDrawer, currency) => totalInDrawer + currency[1],
 		0
@@ -82,7 +82,8 @@ function checkCashRegister(price, cash, cid) {
 	}
 	const totalCurrencyGivenSum = totalChangeReturnedArray.reduce((sum, currency) => sum + currency[1], 0);
 	if(totalCurrencyGivenSum == totalInDrawer) {
-		statusObj.status = "CLOSED"
+		statusObj.status = "CLOSED";
+		statusObj.change = cid;
 	}	else if(changeOwed != 0) {
 		statusObj.status = "INSUFFICIENT_FUNDS";
 		statusObj.change = [];
