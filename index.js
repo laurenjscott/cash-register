@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
 	const btnCheckCashRegister = document.querySelector("form button.btn-check-cash-register");
+	renderCashInDrawerInputs();
 	btnCheckCashRegister.addEventListener("click", () => {
 		const inputCashValue = document.querySelector(".customer-cash").value;
 		console.info(inputCashValue);
