@@ -2,9 +2,9 @@ window.addEventListener("load", () => {
 	const btnCheckCashRegister = document.querySelector("form button.btn-check-cash-register");
 	renderCashInDrawerInputs();
 	btnCheckCashRegister.addEventListener("click", () => {
-		const inputCashValue = document.querySelector(".customer-cash").value;
+		const inputCashValue = document.querySelector("#customer-cash").value;
 		console.info(inputCashValue);
-		const inputPriceValue = document.querySelector(".price").value;
+		const inputPriceValue = document.querySelector("#price").value;
 		const inputsCashInDrawerFieldset = document.querySelectorAll("fieldset input");
 		const arrayCashInDrawerInput = [];
 		for(input of inputsCashInDrawerFieldset) {
