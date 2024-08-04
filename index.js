@@ -80,6 +80,8 @@ function checkCashRegister(price, cash, cid) {
 
 		console.groupEnd();
 	}
+	const totalCurrencyGivenSum = totalChangeReturnedArray.reduce((sum, currency) => sum + currency[1], 0);
+	console.info(totalCurrencyGivenSum);
 	statusObj.status = "OPEN";
 	console.info(statusObj);
 	return statusObj;
