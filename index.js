@@ -1,4 +1,12 @@
-
+window.addEventListener("load", () => {
+	const btnCheckCashRegister = document.querySelector("form button.btn-check-cash-register");
+	btnCheckCashRegister.addEventListener("click", () => {
+		const inputCashValue = document.querySelector(".customer-cash").value;
+		const inputPriceValue = document.querySelector(".price").value;
+		const inputCashInDrawerValue = document.querySelector(".cash-in-drawer").value;
+		checkCashRegister(inputPriceValue, inputCashValue, inputCashInDrawerValue);
+	});
+});
 
 
 function checkCashRegister(price, cash, cid) {
