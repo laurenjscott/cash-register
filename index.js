@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 		}
 		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
-	btnClearForm.addEventListener("click", () => console.info(clearForm));
+	btnClearForm.addEventListener("click", clearForm);
 });
 
 function renderCashInDrawerInputs() {
