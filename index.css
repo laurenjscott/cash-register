@@ -16,6 +16,18 @@ main {
   margin-bottom: 4rem;
 }
 
+form {
+  flex-direction: column;
+
+}
+
+fieldset {
+  gap: 1rem;
+}
+
+fieldset input {
+  margin-left: 0.25rem;
+}
 
 
 form button {
@@ -25,7 +37,8 @@ form button {
 
 form, fieldset {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+
 }
 
 form, form > input
