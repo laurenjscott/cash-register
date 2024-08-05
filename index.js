@@ -62,6 +62,8 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		(totalInDrawer, currency) => totalInDrawer + currency[1],
 		0
 	);
+
+	console.info(totalInDrawer);
     
     let changeOwed = cash - price;
 
