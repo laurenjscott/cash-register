@@ -17,5 +17,10 @@ p.result-paragraph {
   background-color: lightgray;
   padding: 0.25rem;
   border-radius: 0.25rem;
+  visibility: hidden;
+}
+
+.display {
+  visibility: visible;
 }
 
