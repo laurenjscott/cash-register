@@ -2,6 +2,12 @@ main {
   margin-bottom: 4rem;
 }
 
+
+form button {
+  padding: 0.5rem 0.25rem;
+  margin-top: 1.5rem;
+}
+
 form, fieldset {
     display: flex;
     flex-direction: column;
@@ -13,7 +19,6 @@ form, label {
 
 .result-paragraph {
   font-family: monospace;
-  width: max-content;
   background-color: lightgray;
   padding: 0.25rem;
   border-radius: 0.25rem;
@@ -22,5 +27,9 @@ form, label {
 
 .display {
   visibility: visible;
+}
+
+button, .result-paragraph {
+  width: max-content;
 }
 
