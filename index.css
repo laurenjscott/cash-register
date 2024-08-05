@@ -1,6 +1,11 @@
+button {
+  cursor: pointer;
+}
+
 main {
   margin-bottom: 4rem;
 }
+
 
 
 form button {
@@ -13,9 +18,11 @@ form, fieldset {
     flex-direction: column;
 }
 
-form, label {
+form, form > input
+ {
   margin-bottom: 2rem;
 }
+
 
 .result-paragraph {
   font-family: monospace;
