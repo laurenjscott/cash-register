@@ -44,6 +44,8 @@ function renderCashInDrawerInputs() {
 
 
 function checkCashRegister(price, cash, cid) { //cid is an array
+	const resultPara = document.querySelector(".result-paragraph");
+
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
@@ -72,7 +74,7 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 
 	if(totalInDrawer < changeOwed) {
 		statusObj.status = "INSUFFICIENT_FUNDS";
-        console.info(statusObj);
+		resultPara.textContent = JSON.stringify(statusObj);
 		return statusObj;
 	}
     
@@ -136,8 +138,6 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		statusObj.status = "OPEN";
 	}
 	
-	// console.info(statusObj);
-	const resultPara = document.querySelector(".result-paragraph");
 	resultPara.classList.add("display")
 	resultPara.textContent = JSON.stringify(statusObj);
 	return statusObj;
