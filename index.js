@@ -39,8 +39,8 @@ function renderCashInDrawerInputs() {
 		input.id = currency[0];
 		label.textContent = currency[0];
 		label.setAttribute("for", input.id);
+		label.appendChild(input);
 		fieldset.appendChild(label);
-		fieldset.appendChild(input);
 
 	}
 }
