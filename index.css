@@ -1,9 +1,21 @@
+main {
+  margin-bottom: 4rem;
+}
+
 form, fieldset {
     display: flex;
     flex-direction: column;
 }
 
-form, label, main p.result-paragraph {
+form, label {
   margin-bottom: 2rem;
+}
+
+p.result-paragraph {
+  font-family: monospace;
+  width: max-content;
+  background-color: lightgray;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }
 
