@@ -37,8 +37,9 @@ function renderCashInDrawerInputs() {
 		input.id = currency[0];
 		label.textContent = currency[0];
 		label.setAttribute("for", input.id);
-		fieldset.appendChild(input);
 		fieldset.appendChild(label);
+		fieldset.appendChild(input);
+
 	}
 }
 
@@ -75,7 +76,6 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 
 	if(totalInDrawer < changeOwed) {
 		statusObj.status = "INSUFFICIENT_FUNDS";
-		alert("Hello!");
 		resultPara.textContent = JSON.stringify(statusObj);
 		resultPara.classList.add("display");
 		return;
