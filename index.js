@@ -12,7 +12,6 @@ window.addEventListener("load", () => {
 			denominationArray.push(Number(input.value));
 			arrayCashInDrawerInput.push(denominationArray);
 		}
-		console.info(arrayCashInDrawerInput);
 		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
 });
@@ -137,7 +136,8 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		statusObj.status = "OPEN";
 	}
 	
-	console.info(statusObj);
+	// console.info(statusObj);
+	document.querySelector(".random-paragraph").textContent = JSON.stringify(statusObj);
 	return statusObj;
 }
 
