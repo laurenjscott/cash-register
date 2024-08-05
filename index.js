@@ -57,7 +57,7 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		["NICKEL", 0.05],
 		["PENNY", 0.01]
 	];
-	// const cidReverse = cid.toReversed();
+
 	const totalInDrawer = cid.reduce(
 		(totalInDrawer, currency) => totalInDrawer + currency[1],
 		0
@@ -75,6 +75,7 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 	if(totalInDrawer < changeOwed) {
 		statusObj.status = "INSUFFICIENT_FUNDS";
 		resultPara.textContent = JSON.stringify(statusObj);
+		resultPara.classList.add("display");
 		return statusObj;
 	}
     
