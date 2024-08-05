@@ -16,13 +16,15 @@ main {
   margin-bottom: 4rem;
 }
 
-form {
-  flex-direction: column;
 
+form > label {
+  display: block;
 }
 
 fieldset {
   gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 fieldset input {
@@ -35,16 +37,13 @@ form button {
   margin-top: 1.5rem;
 }
 
-form, fieldset {
-    display: flex;
-    flex-wrap: wrap;
-
-}
 
 form, form > input
  {
   margin-bottom: 2rem;
 }
+
+
 
 label, legend {
   font-weight: bold;
