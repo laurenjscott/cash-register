@@ -137,7 +137,7 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 	}
 	
 	// console.info(statusObj);
-	document.querySelector(".random-paragraph").textContent = JSON.stringify(statusObj);
+	document.querySelector(".result-paragraph").textContent = JSON.stringify(statusObj);
 	return statusObj;
 }
 
