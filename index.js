@@ -3,14 +3,13 @@ window.addEventListener("load", () => {
 	renderCashInDrawerInputs();
 	btnCheckCashRegister.addEventListener("click", () => {
 		const inputCashValue = document.querySelector("#customer-cash").value;
-		console.info(inputCashValue);
 		const inputPriceValue = document.querySelector("#price").value;
 		const inputsCashInDrawerFieldset = document.querySelectorAll("fieldset input");
 		const arrayCashInDrawerInput = [];
 		for(input of inputsCashInDrawerFieldset) {
 			let denominationArray = [];
 			denominationArray.push(input.id);
-			denominationArray.push(input.value);
+			denominationArray.push(Number(input.value));
 			arrayCashInDrawerInput.push(denominationArray);
 		}
 		console.info(arrayCashInDrawerInput);
@@ -57,8 +56,8 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		["NICKEL", 0.05],
 		["PENNY", 0.01]
 	];
-	const cidReverse = cid.toReversed();
-	const totalInDrawer = cidReverse.reduce(
+	// const cidReverse = cid.toReversed();
+	const totalInDrawer = cid.reduce(
 		(totalInDrawer, currency) => totalInDrawer + currency[1],
 		0
 	);
@@ -78,7 +77,7 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		return statusObj;
 	}
     
-	for (let currency of cidReverse) {
+	for (let currency of cid) {
 		let currencyDenominationString = currency[0]; //e.g. "PENNY"
 		let currencyDrawerTotal = currency[1]; //e.g. "1.01"
 		let currencyDictionaryAmount = currencyDictionary.find(

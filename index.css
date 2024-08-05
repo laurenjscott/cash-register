@@ -3,6 +3,7 @@ form, fieldset {
     flex-direction: column;
 }
 
-form label {
+form, label, main p.result-paragraph {
   margin-bottom: 2rem;
 }
+
