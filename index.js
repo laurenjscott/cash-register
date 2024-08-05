@@ -63,7 +63,6 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 		0
 	);
 
-	console.info(totalInDrawer);
     
     let changeOwed = cash - price;
 
@@ -76,9 +75,10 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 
 	if(totalInDrawer < changeOwed) {
 		statusObj.status = "INSUFFICIENT_FUNDS";
+		alert("Hello!");
 		resultPara.textContent = JSON.stringify(statusObj);
 		resultPara.classList.add("display");
-		return statusObj;
+		return;
 	}
     
 	for (let currency of cid) {
