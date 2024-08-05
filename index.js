@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 		}
 		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
-	btnClearForm.addEventListener("click", () => console.info(this));
+	btnClearForm.addEventListener("click", () => console.info(clearForm));
 });
 
 function renderCashInDrawerInputs() {
@@ -148,8 +148,8 @@ function checkCashRegister(price, cash, cid) { //cid is an array
 	return statusObj;
 }
 
-function clearForm(form) {
-	form.reset();
+function clearForm() {
+	this.form.reset();
 }
 
 // checkCashRegister(19.5, 19.73, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
