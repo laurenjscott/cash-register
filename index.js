@@ -37,6 +37,7 @@ function renderCashInDrawerInputs() {
 		let label = document.createElement("label");
 		input.type = "number";
 		input.id = currency[0];
+		input.setAttribute("min", "0")
 		label.textContent = currency[0];
 		label.setAttribute("for", input.id);
 		label.appendChild(input);
