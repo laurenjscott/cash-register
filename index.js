@@ -57,7 +57,11 @@ function renderCashInDrawerInputs() {
 
 function checkCashRegister(event, price, cash, cid) { //cid is an array
 
-	validateForm(event);
+	const isFormValid = validateForm(event);
+
+	if(!isFormValid) {
+		return;
+	}
 
 	const resultPara = document.querySelector(".result-paragraph");
 
@@ -181,7 +185,14 @@ function validateNumberInputs(event) {
 }
 
 function validateForm(event) {
-	console.info(event);
+	const form = event.currentTarget.parentNode;
+	const isFormValid = form.checkValidity();
+	if(!isFormValid) {
+		form.reportValidity();
+		return false
+	} else {
+		return true;
+	}
 }
 
 
