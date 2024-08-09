@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
 	btnClearForm.addEventListener("click", clearForm);
 
 	const inputArray = [...document.querySelectorAll("input")];
-	inputArray.forEach(input => input.addEventListener("change", validateNumberInputs))
+	inputArray.forEach(input => input.addEventListener("input", validateNumberInputs))
 
 
 });
@@ -165,9 +165,7 @@ function clearForm() {
 function validateNumberInputs(event) {
 	const input = event.currentTarget;
 	const isValid = input.validity.valid;
-	console.info(input);
 	if(isValid != true) {
-		alert("Hello World!");
 		input.reportValidity();
 	}
 }
