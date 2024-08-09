@@ -172,7 +172,7 @@ function validateNumberInputs(event) {
 	if(isValid != true && !isFirefox) {
 		input.reportValidity();
 	} else {
-		setTimeout(input.reportValidity(), 1000);
+		setTimeout(input.reportValidity(), 2000);
 	}
 }
 
