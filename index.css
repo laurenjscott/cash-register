@@ -45,7 +45,6 @@ fieldset input {
 }
 
 
-
 form button {
   padding: 0.5rem 0.25rem;
   margin-top: 1.5rem;
@@ -64,6 +63,7 @@ form, form > input
   margin-bottom: 2rem;
 }
 
+
 form > label, form > input {
   margin-left: 0.5rem;
 }
@@ -73,6 +73,7 @@ form > label, form > input {
 label, legend {
   font-weight: bold;
 }
+
 
 .fieldset-wrapper {
   background-color: beige;

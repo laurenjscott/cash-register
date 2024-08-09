@@ -46,7 +46,7 @@ function renderCashInDrawerInputs() {
 		input.setAttribute("min", "0");
 		input.setAttribute("step", ".01");
 		input.setAttribute("size", "10");
-		label.textContent = currency[0];
+		label.textContent = currency[0].toLowerCase();
 		label.setAttribute("for", input.id);
 		label.appendChild(input);
 		fieldset.appendChild(label);
