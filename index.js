@@ -16,6 +16,11 @@ window.addEventListener("load", () => {
 		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
 	btnClearForm.addEventListener("click", clearForm);
+
+	const inputArray = [...document.querySelectorAll("input")];
+	inputArray.forEach(input => input.addEventListener("change", validateNumberInputs))
+
+
 });
 
 function renderCashInDrawerInputs() {
@@ -156,5 +161,14 @@ function clearForm() {
 	resultPara.textContent = "";
 	resultPara.classList.remove("display");
 }
+
+function validateNumberInputs(event) {
+	const input = event.currentTarget;
+	const isValid = input.validity.valid;
+	if(isValid != true) {
+		input.reportValidity();
+	}
+}
+
 
 // checkCashRegister(19.5, 19.73, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);

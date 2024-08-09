@@ -25,17 +25,18 @@ fieldset {
   gap: 1rem;
   display: flex;
   flex-wrap: wrap;
+  border: 0;
 }
 
 fieldset, legend {
-  padding-left: 0;
-
+  padding-left: 0.5rem;
 }
 
 
 fieldset input {
   margin-left: 0.25rem;
 }
+
 
 
 form button {
@@ -54,6 +55,10 @@ form button.btn-check-cash-register {
 form, form > input
  {
   margin-bottom: 2rem;
+}
+
+form > label, form > input {
+  margin-left: 0.5rem;
 }
 
 
