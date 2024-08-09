@@ -165,7 +165,7 @@ function clearForm() {
 function validateNumberInputs(event) {
 	const input = event.currentTarget;
 	const isValid = input.validity.valid;
-	console.info(isValid);
+	console.info(input);
 	if(isValid != true) {
 		alert("Hello World!");
 		input.reportValidity();
