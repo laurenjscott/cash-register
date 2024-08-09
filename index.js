@@ -167,8 +167,12 @@ function clearForm() {
 function validateNumberInputs(event) {
 	const input = event.currentTarget;
 	const isValid = input.validity.valid;
-	if(isValid != true) {
+	const isFirefox = /Firefox/.test(navigator.userAgent); //As of Firefox for macOS 129.0, there two bugs regarding reportValidity. The first is that validaton bubble isn't displayed for the change event even when the input loses focus. So I changed to an input event. The second bug is that the validation message doesn't update when the invalid condition changes while typing. Example: if a message first shows up when an input is cleared and then enters an invalid number, the first validation message is still displayed. Only when the input loses focus, regains it, and adds a character to the invalid data does the message update. reportValidity works properly only when stepping through this function in the debugger, so I'm adding a small delay for Firefox only.
+	console.info(isFirefox);
+	if(isValid != true && !isFirefox) {
 		input.reportValidity();
+	} else {
+		setTimeout(input.reportValidity(), 500);
 	}
 }
 
