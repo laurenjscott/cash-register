@@ -28,8 +28,12 @@ fieldset {
   border: 0;
 }
 
+legend {
+  margin-bottom: 0.75rem;
+}
+
 fieldset, legend {
-  padding-left: 0.5rem;
+  padding-left: 0;
 }
 
 
