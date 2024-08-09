@@ -1,8 +1,9 @@
 window.addEventListener("load", () => {
 	const btnCheckCashRegister = document.querySelector("form button.btn-check-cash-register");
 	const btnClearForm = document.querySelector("form button.btn-clear-form");
-	renderCashInDrawerInputs();
-	btnCheckCashRegister.addEventListener("click", () => {
+	const inputArray = [...document.querySelectorAll("input")];
+
+	btnCheckCashRegister.addEventListener("click", (event) => {
 		const inputCashValue = document.querySelector("#customer-cash").value;
 		const inputPriceValue = document.querySelector("#price").value;
 		const inputsCashInDrawerFieldset = document.querySelectorAll("fieldset input");
@@ -13,12 +14,12 @@ window.addEventListener("load", () => {
 			denominationArray.push(Number(input.value));
 			arrayCashInDrawerInput.push(denominationArray);
 		}
-		checkCashRegister(inputPriceValue, inputCashValue, arrayCashInDrawerInput);
+		checkCashRegister(event, inputPriceValue, inputCashValue, arrayCashInDrawerInput);
 	});
 	btnClearForm.addEventListener("click", clearForm);
+	inputArray.forEach(input => input.addEventListener("input", validateNumberInputs));
+	renderCashInDrawerInputs();
 
-	const inputArray = [...document.querySelectorAll("input")];
-	inputArray.forEach(input => input.addEventListener("input", validateNumberInputs))
 
 
 });
@@ -54,7 +55,10 @@ function renderCashInDrawerInputs() {
 }
 
 
-function checkCashRegister(price, cash, cid) { //cid is an array
+function checkCashRegister(event, price, cash, cid) { //cid is an array
+
+	validateForm(event);
+
 	const resultPara = document.querySelector(".result-paragraph");
 
 	const currencyDictionary = [
@@ -167,13 +171,17 @@ function clearForm() {
 function validateNumberInputs(event) {
 	const input = event.currentTarget;
 	const isValid = input.validity.valid;
-	const isFirefox = /Firefox/.test(navigator.userAgent); //As of Firefox for macOS 129.0, there two bugs regarding reportValidity. The first is that validaton bubble isn't displayed for the change event even when the input loses focus. So I changed to an input event. The second bug is that the validation message doesn't update when the invalid condition changes while typing. Example: if a message first shows up when an input is cleared and then enters an invalid number, the first validation message is still displayed. Only when the input loses focus, regains it, and adds a character to the invalid data does the message update. reportValidity works properly only when stepping through this function in the debugger, so I'm adding a small delay for Firefox only.
+	const isFirefox = /Firefox/.test(navigator.userAgent); //As of Firefox for macOS 129.0, there two bugs regarding reportValidity. The first is that validaton bubble isn't displayed for the change event even when the input loses focus. So I changed to an input event. The second bug is that the validation message doesn't update when the invalid condition changes while typing. Example: if a message first shows up when an input is cleared and then enters an invalid number, the first validation message is still displayed. Only when the input loses focus, regains it, and adds a character to the invalid data does the message update. reportValidity works properly only when stepping through this function in the debugger, so I'm adding a small delay for Firefox only. Update: this didn't work either. Not going to worry about it since it's obvious a negative number doesn't make sense in the inputs, but leaving this in for documentation.
 	console.info(isFirefox);
 	if(isValid != true && !isFirefox) {
 		input.reportValidity();
 	} else {
 		setTimeout(input.reportValidity(), 2000);
 	}
+}
+
+function validateForm(event) {
+	console.info(event);
 }
 
 
