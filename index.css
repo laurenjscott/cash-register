@@ -16,6 +16,9 @@ main {
   margin-bottom: 4rem;
 }
 
+input {
+  appearance: textfield;
+}
 
 form > label {
   display: block;
