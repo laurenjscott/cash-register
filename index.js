@@ -201,7 +201,7 @@ function validateForm(event) {
 function validateCustomerHasEnoughCash() {
 	const inputCash = document.querySelector("input#customer-cash");
 	const inputPrice = document.querySelector("input#price");
-	if(inputCash.value < inputPrice.value) {
+	if(parseFloat(inputCash.value) < parseFloat(inputPrice.value)) {
 		return false;
 	}
 	return true;
