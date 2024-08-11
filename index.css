@@ -71,7 +71,7 @@ form > label, form > input {
 
 
 
-label, legend {
+form > label, legend {
   font-weight: bold;
 }
 
