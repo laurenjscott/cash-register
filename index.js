@@ -172,11 +172,10 @@ function clearForm() {
 	resultPara.classList.remove("display");
 }
 
-function validateNumberInputs(event) {
+function validateNumberInputs(event) { //only checks for HTML5 validation pattern errors
 	const input = event.currentTarget;
-	const isValid = input.validity.valid;
-	const isFirefox = /Firefox/.test(navigator.userAgent); //As of Firefox for macOS 129.0, there two bugs regarding reportValidity. The first is that validaton bubble isn't displayed for the change event even when the input loses focus. So I changed to an input event. The second bug is that the validation message doesn't update when the invalid condition changes while typing. Example: if a message first shows up when an input is cleared and then enters an invalid number, the first validation message is still displayed. Only when the input loses focus, regains it, and adds a character to the invalid data does the message update. reportValidity works properly only when stepping through this function in the debugger, so I'm adding a small delay for Firefox only. Update: this didn't work either. Not going to worry about it since it's obvious a negative number doesn't make sense in the inputs, but leaving this in for documentation.
-	console.info(isFirefox);
+	const isValid = input.checkValidity();
+	const isFirefox = /Firefox/.test(navigator.userAgent); //As of Firefox for macOS 129.0, there are two bugs regarding reportValidity. The first is that validaton bubble isn't displayed for the change event even when the input loses focus. So I changed to an input event. The second bug is that the validation message doesn't update when the invalid condition changes while typing. Example: if a message first shows up when an input is cleared and then enters an invalid number, the first validation message is still displayed. Only when the input loses focus, regains it, and adds a character to the invalid data does the message update. reportValidity works properly only when stepping through this function in the debugger, so I'm adding a small delay for Firefox only. Update: this didn't work either. Not going to worry about it since it's obvious a negative number doesn't make sense in the inputs, but leaving this in for documentation.
 	if(isValid != true && !isFirefox) {
 		input.reportValidity();
 	} else {
@@ -187,12 +186,25 @@ function validateNumberInputs(event) {
 function validateForm(event) {
 	const form = event.currentTarget.parentNode;
 	const isFormValid = form.checkValidity();
+	const enoughCash = validateCustomerHasEnoughCash();
 	if(!isFormValid) {
 		form.reportValidity();
-		return false
+		return false;
+	} else if(!enoughCash) {
+		alert("Not enough cash provided by the customer!");
+		return false;
 	} else {
 		return true;
 	}
+}
+
+function validateCustomerHasEnoughCash() {
+	const inputCash = document.querySelector("input#customer-cash");
+	const inputPrice = document.querySelector("input#price");
+	if(inputCash.value < inputPrice.value) {
+		return false;
+	}
+	return true;
 }
 
 
