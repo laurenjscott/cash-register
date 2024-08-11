@@ -41,7 +41,8 @@ fieldset, legend {
 
 
 fieldset input {
-  margin-left: 0.25rem;
+  display: block;
+  margin-left: 0;
 }
 
 
