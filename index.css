@@ -99,7 +99,7 @@ button, .result-paragraph {
   width: max-content;
 }
 
-@media (width < 450px) {
+@media (width < 425px) {
   button {
     width: 100%;
   }
