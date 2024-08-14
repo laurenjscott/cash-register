@@ -18,6 +18,7 @@ main {
 
 input {
   appearance: textfield;
+  font-size: 1rem;
 }
 
 form > label {
@@ -100,7 +101,7 @@ button, .result-paragraph {
 }
 
 @media (width < 600px) {
-  button {
+  form button {
     width: 100%;
     padding: 1rem 1.5rem;
     font-size: 1rem;
