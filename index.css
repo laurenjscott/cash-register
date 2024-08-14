@@ -52,11 +52,13 @@ fieldset input {
 
 
 form button {
-  padding: 0.5rem 0.25rem;
   margin-top: 1.5rem;
   border: 0;
   border-radius: 0.25rem;
   font-size: 1rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+
 }
 
 form button.btn-check-cash-register {
@@ -101,14 +103,15 @@ form > label, legend {
   visibility: visible;
 }
 
-button, .result-paragraph {
-  width: max-content;
-}
 
-@media (width < 600px) {
+
+@media (width > 600px) {
   form button {
-    width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  form button, .result-paragraph {
+    width: max-content;
   }
 }
 
