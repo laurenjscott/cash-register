@@ -21,6 +21,10 @@ input {
   font-size: 1rem;
 }
 
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { /* Hides arrows on number inputs in Safari for macOS since the browser ignores "appearance: textfield" */
+  display: none;
+}
+
 form > label {
   display: block;
 }
