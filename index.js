@@ -215,8 +215,9 @@ function displayUserName() {
 			console.info("Hello Friend!");
 			return;
 		}
+		console.info(`Hello ${newUserName}!`)
 	}
-	console.info(`Hello ${newUserName || savedUserName}!!`);
+	console.info(`Hello ${savedUserName}!`);
 
 }
 
