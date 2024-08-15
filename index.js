@@ -214,7 +214,7 @@ function displayUserName() {
 		if(!newUserName) {
 			console.info("Hello Friend!");
 		}
-		console.info(`Hello ${newUserName}!`);
+		console.info(`Hello ${newUserName}!!`);
 	}
 }
 
