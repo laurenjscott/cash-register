@@ -27,7 +27,6 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { /* Hides ar
 
 form > label {
   display: block;
-  border: 1px solid red;
 }
 
 fieldset {
@@ -57,6 +56,10 @@ form button {
   width: 100%;
   padding: 1rem 1.5rem;
 
+}
+
+fieldset label {
+  border: 1px solid red;
 }
 
 form button.btn-check-cash-register {
