@@ -12,6 +12,12 @@ button {
   cursor: pointer;
 }
 
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 main {
   margin-bottom: 4rem;
 }
