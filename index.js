@@ -213,8 +213,9 @@ function displayUserName() {
 		const newUserName = askForUserName();
 		if(!newUserName) {
 			console.info("Hello Friend!");
+			return;
 		}
-		console.info(`Hello ${newUserName}!!`);
+		console.info(`Hello ${newUserName || savedUserName}!!`);
 	}
 }
 
