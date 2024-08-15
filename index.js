@@ -222,12 +222,13 @@ function displayUserName() {
 }
 
 function askForUserName() {
-	const userName = prompt("Hi, what is your name");
+	const userName = prompt("Hi, what is your name?");
 	//if user provide a name, save to local storage by invoking rememberUserName function
 	if(Boolean(userName) != true) {
 		return false;
 	}
 	rememberUserName(userName);
+	return true;
 }
 
 function rememberUserName(string) {
