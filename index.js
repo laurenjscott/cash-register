@@ -211,6 +211,7 @@ function displayUserName() {
 	const savedUserName = localStorage.getItem("userName");
 	if(savedUserName == null) {
 		const newUserName = askForUserName();
+		console.info(newUserName);
 		if(!newUserName) {
 			console.info("Hello Friend!");
 		} else {
