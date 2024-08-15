@@ -213,9 +213,9 @@ function displayUserName() {
 		const newUserName = askForUserName();
 		if(!newUserName) {
 			console.info("Hello Friend!");
-			return;
+		} else {
+			console.info(`Hello ${newUserName}!`)
 		}
-		console.info(`Hello ${newUserName}!`)
 		return;
 	}
 	console.info(`Hello ${savedUserName}!`);
@@ -229,7 +229,7 @@ function askForUserName() {
 		return false;
 	}
 	rememberUserName(userName);
-	return true;
+	return userName;
 }
 
 function rememberUserName(string) {
