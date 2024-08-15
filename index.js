@@ -211,16 +211,17 @@ function validateCustomerHasEnoughCash() {
 
 function displayUserName() {
 	const savedUserName = localStorage.getItem("userName");
+	const welcomeMessage = document.querySelector(".placeholder-welcome-message");
 	if(savedUserName == null) {
 		const newUserName = askForUserName();
 		if(!newUserName) {
-			console.info("Hello Friend!");
+			welcomeMessage.textContent = `Hello Friend!`;
 		} else {
-			console.info(`Hello ${newUserName}!`)
+			welcomeMessage.textContent = `Hello ${newUserName}!`;
 		}
 		return;
 	}
-	console.info(`Hello ${savedUserName}!`);
+	welcomeMessage.textContent = `Hello ${savedUserName}!`;
 
 }
 
