@@ -20,6 +20,8 @@ window.addEventListener("load", () => {
 	inputArray.forEach(input => input.addEventListener("input", validateNumberInputs));
 	renderCashInDrawerInputs();
 
+	displayUserName();
+
 
 
 });
