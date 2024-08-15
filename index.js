@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
 
 function renderCashInDrawerInputs() {
 	const fieldset = document.querySelector("fieldset");
+	const wrapper = fieldset.querySelector(".fieldset-input-wrapper");
 	const currencyDictionary = [
 		["ONE HUNDRED", 100],
 		["TWENTY", 20],
@@ -51,9 +52,9 @@ function renderCashInDrawerInputs() {
 		label.textContent = currency[0].toLowerCase();
 		label.setAttribute("for", input.id);
 		label.appendChild(input);
-		fieldset.appendChild(label);
-
+		wrapper.appendChild(label);
 	}
+	fieldset.appendChild(wrapper);
 }
 
 

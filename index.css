@@ -30,9 +30,9 @@ form > label {
 }
 
 fieldset {
-  gap: 1rem;
-  display: flex;
-  flex-wrap: wrap;
+  /* gap: 1rem; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   border: 0;
 }
 
@@ -88,6 +88,12 @@ form > label, legend {
   background-color: beige;
   padding: 0.25rem 0.5rem;
   max-width: 700px;
+}
+
+.fieldset-input-wrapper {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
