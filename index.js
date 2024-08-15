@@ -216,6 +216,7 @@ function displayUserName() {
 			return;
 		}
 		console.info(`Hello ${newUserName}!`)
+		return;
 	}
 	console.info(`Hello ${savedUserName}!`);
 
