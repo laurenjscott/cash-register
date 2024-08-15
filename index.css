@@ -27,12 +27,10 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { /* Hides ar
 
 form > label {
   display: block;
+  border: 1px solid red;
 }
 
 fieldset {
-  /* gap: 1rem; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
   border: 0;
 }
 
