@@ -58,9 +58,7 @@ form button {
 
 }
 
-fieldset label {
-  border: 1px solid red;
-}
+
 
 form button.btn-check-cash-register {
   background-color: seagreen;
